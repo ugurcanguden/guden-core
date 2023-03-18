@@ -1,0 +1,30 @@
+{
+  "name": "ugmc-type-core",
+  "version": "1.0.0",
+  "description": "util and helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugurcanguden/ugmc-type-core.git"
+  },
+  "keywords": [
+    "include",
+    "of",
+    "control",
+    "and",
+    "helper",
+    "functions"
+  ],
+  "author": "ugurcan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ugurcanguden/ugmc-type-core/issues"
+  },
+  "homepage": "https://github.com/ugurcanguden/ugmc-type-core#readme",
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
+}
