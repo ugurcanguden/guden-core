@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+    "outDir": "dist",                                   /* Specify an output folder for all emitted files. */
+    "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    "declaration": true                               /* Skip type checking all .d.ts files. */
+  }  
+}
