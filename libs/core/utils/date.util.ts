@@ -1,8 +1,8 @@
 import { DateFormat } from "../../common/enums";
 
- 
 
-export function ConvertDateToString(date:Date,format : DateFormat):string{
+
+export function ConvertDateToString(date: Date, format: DateFormat): string {
     let returnString = "";
     var day = convertNumberTwoDigitString(date.getDate());
     var month = convertNumberTwoDigitString(date.getMonth());
@@ -15,14 +15,21 @@ export function ConvertDateToString(date:Date,format : DateFormat):string{
         case DateFormat.DDMMYYYYS:
             returnString = `${day}/${month}/${year}`;
             break;
+        case DateFormat.MMDDYYYYS:
+            returnString = `${month}/${day}/${year}`;
+            break;
+        case DateFormat.MMDDYYYYP:
+            returnString = `${month}.${day}.${year}`;
+            break;
         default:
             break;
     }
     return returnString;
 }
 
-function convertNumberTwoDigitString(value:number):string {
-    value+=1;
-    var returnValue = (value>0 && value<10) ? "0" : "";
-    return  returnValue+value.toString()  
+function convertNumberTwoDigitString(value: number): string {
+    if (value >= 0 && value < 10)
+        return "0" + value.toString();
+    else
+        return value + value.toString()
 }

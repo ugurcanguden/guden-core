@@ -1,10 +1,7 @@
 import {divideArray, isNullOrEmptyArray, sortArray} from './array.util';
-import {isIncludeValue,isNullOrEmptyString} from './string.util';
+import {isIncludeValue,isNullOrEmptyString,generateGUID} from './string.util';
 import {ConvertDateToString} from './date.util';
-import {isNull,isNullOrUndefined,isUndefined} from './object.util';
-
-
-
+import {convertToJSON, createModel, isNull,isNullOrUndefined,isUndefined} from './object.util';
 
 export {
     isNullOrEmptyArray,
@@ -12,5 +9,8 @@ export {
     isIncludeValue,isNullOrEmptyString,
     ConvertDateToString,
     sortArray,
-    divideArray 
+    divideArray,
+    convertToJSON,
+    createModel,
+    generateGUID  
 }
