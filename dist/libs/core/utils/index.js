@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateGUID = exports.createModel = exports.convertToJSON = exports.divideArray = exports.sortArray = exports.ConvertDateToString = exports.isNullOrEmptyString = exports.isIncludeValue = exports.isUndefined = exports.isNullOrUndefined = exports.isNull = exports.isNullOrEmptyArray = void 0;
+exports.generateGUID = exports.createModel = exports.convertToJSON = exports.divideArray = exports.removeDuplicates = exports.sortArray = exports.ConvertDateToString = exports.isNullOrEmptyString = exports.isIncludeValue = exports.isUndefined = exports.isNullOrUndefined = exports.isNull = exports.isNullOrEmptyArray = void 0;
 const array_util_1 = require("./array.util");
 Object.defineProperty(exports, "divideArray", { enumerable: true, get: function () { return array_util_1.divideArray; } });
 Object.defineProperty(exports, "isNullOrEmptyArray", { enumerable: true, get: function () { return array_util_1.isNullOrEmptyArray; } });
+Object.defineProperty(exports, "removeDuplicates", { enumerable: true, get: function () { return array_util_1.removeDuplicates; } });
 Object.defineProperty(exports, "sortArray", { enumerable: true, get: function () { return array_util_1.sortArray; } });
 const string_util_1 = require("./string.util");
 Object.defineProperty(exports, "isIncludeValue", { enumerable: true, get: function () { return string_util_1.isIncludeValue; } });

@@ -1,35 +1,29 @@
-import { DateFormat } from "../../common/enums";
+import { DateFormat } from "../../common/enums"; 
 
 
 
-export function ConvertDateToString(date: Date, format: DateFormat): string {
-    let returnString = "";
-    var day = convertNumberTwoDigitString(date.getDate());
-    var month = convertNumberTwoDigitString(date.getMonth());
-    var year = date.getFullYear().toString();
+export function ConvertDateToString(date: Date | null | undefined, format: DateFormat): string {
+    if (date == null) 
+        return "";     
+    date = new Date(date);
+    const day = convertNumberTwoDigitString(date.getDate());
+    const month = convertNumberTwoDigitString(date.getMonth() + 1); // Ayın başlangıcı 0 ile temsil edilir, bu yüzden 1 ekliyoruz.
+    const year = date.getFullYear().toString();
 
     switch (format) {
         case DateFormat.DDMMYYYYP:
-            returnString = `${day}.${month}.${year}`
-            break;
+            return `${day}.${month}.${year}`;
         case DateFormat.DDMMYYYYS:
-            returnString = `${day}/${month}/${year}`;
-            break;
+            return `${day}/${month}/${year}`;
         case DateFormat.MMDDYYYYS:
-            returnString = `${month}/${day}/${year}`;
-            break;
+            return `${month}/${day}/${year}`;
         case DateFormat.MMDDYYYYP:
-            returnString = `${month}.${day}.${year}`;
-            break;
+            return `${month}.${day}.${year}`;
         default:
-            break;
+            return "";
     }
-    return returnString;
 }
 
-function convertNumberTwoDigitString(value: number): string {
-    if (value >= 0 && value < 10)
-        return "0" + value.toString();
-    else
-        return value + value.toString()
+function convertNumberTwoDigitString(num: number): string {
+    return num < 10 ? `0${num}` : num.toString();
 }

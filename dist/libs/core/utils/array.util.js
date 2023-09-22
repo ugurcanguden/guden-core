@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sortArray = exports.divideArray = exports.isNullOrEmptyArray = void 0;
+exports.removeDuplicates = exports.sortArray = exports.divideArray = exports.isNullOrEmptyArray = void 0;
 const object_util_1 = require("./object.util");
 /**
  * array control
@@ -38,4 +38,13 @@ function sortArray(array, key, isDesc = false) {
     return array;
 }
 exports.sortArray = sortArray;
+/**
+ * Remove dublicate values.
+ * @param arr
+ * @returns
+ */
+function removeDuplicates(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+exports.removeDuplicates = removeDuplicates;
 //# sourceMappingURL=array.util.js.map

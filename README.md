@@ -1,3 +1,4 @@
+=UĞURCAN GÜDEN=
 ENUMS : 
 DateFormat
 
@@ -15,3 +16,4 @@ divideArray: Array divide,
 getLocalStoreByName : read localstore item, 
 removeLocalStorage : remoce localstore item, 
 setLocalStorage : write localstore item 
+removeDuplicates : remove dublicate records

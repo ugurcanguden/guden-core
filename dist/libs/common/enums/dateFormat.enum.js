@@ -12,5 +12,5 @@ var DateFormat;
     DateFormat["YYYYMMDDS"] = "yyyy/mm/dd";
     DateFormat["YYYYMMDDP"] = "yyyy.mm.dd";
     DateFormat["YYYYMMDDT"] = "yyyyy-mm-dd";
-})(DateFormat = exports.DateFormat || (exports.DateFormat = {}));
+})(DateFormat || (exports.DateFormat = DateFormat = {}));
 //# sourceMappingURL=dateFormat.enum.js.map

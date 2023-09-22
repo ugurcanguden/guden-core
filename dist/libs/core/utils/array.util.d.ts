@@ -13,3 +13,9 @@ export declare function isNullOrEmptyArray(value: any): boolean;
  */
 export declare function divideArray<T>(array: T[], size: number): Dictionary<T[]>[];
 export declare function sortArray(array: any[], key: string, isDesc?: boolean): any[];
+/**
+ * Remove dublicate values.
+ * @param arr
+ * @returns
+ */
+export declare function removeDuplicates<T>(arr: T[]): T[];

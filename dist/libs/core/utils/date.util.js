@@ -3,33 +3,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConvertDateToString = void 0;
 const enums_1 = require("../../common/enums");
 function ConvertDateToString(date, format) {
-    let returnString = "";
-    var day = convertNumberTwoDigitString(date.getDate());
-    var month = convertNumberTwoDigitString(date.getMonth());
-    var year = date.getFullYear().toString();
+    if (date == null)
+        return "";
+    date = new Date(date);
+    const day = convertNumberTwoDigitString(date.getDate());
+    const month = convertNumberTwoDigitString(date.getMonth() + 1); // Ayın başlangıcı 0 ile temsil edilir, bu yüzden 1 ekliyoruz.
+    const year = date.getFullYear().toString();
     switch (format) {
         case enums_1.DateFormat.DDMMYYYYP:
-            returnString = `${day}.${month}.${year}`;
-            break;
+            return `${day}.${month}.${year}`;
         case enums_1.DateFormat.DDMMYYYYS:
-            returnString = `${day}/${month}/${year}`;
-            break;
+            return `${day}/${month}/${year}`;
         case enums_1.DateFormat.MMDDYYYYS:
-            returnString = `${month}/${day}/${year}`;
-            break;
+            return `${month}/${day}/${year}`;
         case enums_1.DateFormat.MMDDYYYYP:
-            returnString = `${month}.${day}.${year}`;
-            break;
+            return `${month}.${day}.${year}`;
         default:
-            break;
+            return "";
     }
-    return returnString;
 }
 exports.ConvertDateToString = ConvertDateToString;
-function convertNumberTwoDigitString(value) {
-    if (value >= 0 && value < 10)
-        return "0" + value.toString();
-    else
-        return value + value.toString();
+function convertNumberTwoDigitString(num) {
+    return num < 10 ? `0${num}` : num.toString();
 }
 //# sourceMappingURL=date.util.js.map

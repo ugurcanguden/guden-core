@@ -35,3 +35,12 @@ export function sortArray(array: any[], key: string, isDesc: boolean = false): a
     });
     return array;
 }  
+
+/**
+ * Remove dublicate values.
+ * @param arr 
+ * @returns 
+ */
+export function removeDuplicates<T>(arr: T[]): T[] {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
