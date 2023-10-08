@@ -24,6 +24,15 @@ export function ConvertDateToString(date: Date | null | undefined, format: DateF
     }
 }
 
+export function ConvertDateToTimeString(date: Date | null | undefined): string {
+    if (date == null) 
+        return "";     
+    date = new Date(date);
+    const hours = convertNumberTwoDigitString(date.getHours());
+    const minutes = convertNumberTwoDigitString(date.getMinutes());
+    return `${hours}:${minutes}`;
+}
+
 function convertNumberTwoDigitString(num: number): string {
     return num < 10 ? `0${num}` : num.toString();
 }

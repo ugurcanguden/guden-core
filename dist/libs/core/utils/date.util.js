@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConvertDateToString = void 0;
+exports.ConvertDateToTimeString = exports.ConvertDateToString = void 0;
 const enums_1 = require("../../common/enums");
 function ConvertDateToString(date, format) {
     if (date == null)
@@ -23,6 +23,15 @@ function ConvertDateToString(date, format) {
     }
 }
 exports.ConvertDateToString = ConvertDateToString;
+function ConvertDateToTimeString(date) {
+    if (date == null)
+        return "";
+    date = new Date(date);
+    const hours = convertNumberTwoDigitString(date.getHours());
+    const minutes = convertNumberTwoDigitString(date.getMinutes());
+    return `${hours}:${minutes}`;
+}
+exports.ConvertDateToTimeString = ConvertDateToTimeString;
 function convertNumberTwoDigitString(num) {
     return num < 10 ? `0${num}` : num.toString();
 }
